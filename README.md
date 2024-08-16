@@ -84,7 +84,11 @@ The Digital Card Identification Smart Contract offers a decentralized alternativ
 
 - **`CardVerified(address indexed verifier, address indexed userAddress, bool isValid)`**: 
   - Emitted when a digital card is verified by a third party.
+## **Security Considerations**
 
+- **Reentrancy Protection**: The contract uses the `ReentrancyGuard` from OpenZeppelin to prevent reentrancy attacks.
+- **Data Privacy**: User data is hashed before being stored on the blockchain, ensuring that personal information is not exposed.
+- **Role-Based Access Control**: Only the contract owner can issue or revoke cards, ensuring that only authorized actions are performed.
 
 
 ## **Gas Optimization**
